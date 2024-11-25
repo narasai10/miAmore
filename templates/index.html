@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Amore</title>
+    {{ bootstrap.load_css() }}
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/index.css')}}" />
+</head>
+
+<body>
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{{url_for('static', filename='images/brand.svg')}}" alt="Logo" width="30" height="24"
+                    class="d-inline-block align-text-top" />
+                <span>Mi <span class="gradient-text-red">amore</span></span>
+            </a>
+        </div>
+    </nav>
+    <div class="container d-flex flex-column align-items-center">
+        <div class="my-auto text-center w-50">
+            <h1 class="h1">
+                Para o seu alguém <span class="gradient-text-red">especial</span>
+            </h1>
+            <h4 class="text-secondary text-wrap">
+                Mostre seu carinho por aquela pessoa tão amada, criando um pequeno
+                cantinho para vocês.
+            </h4>
+            <form class="needs-validation" novalidate method="post">
+                <div class="row mt-2 g-0">
+                    <!-- Input -->
+                    <div class="col-12">
+                        <input class="form-control" placeholder="Ex: Rafael & Tatiane..." required type="text"
+                            pattern="^[a-zA-Z0-9\s]{3,15}$" id="couple" name="couple"/>
+                        <div class="invalid-feedback">Informe o nome do casal!</div>
+                    </div>
+
+                    <!-- Botão -->
+                    <div class="col-12 d-flex justify-content-center mt-2">
+                        <button class="btn btn-outline-primary" type="submit">Começar</button>
+                    </div>
+                </div>
+            </form>
+
+
+
+        </div>
+    </div>
+
+    <script src="{{url_for('static', filename='scripts/validation.js')}}"></script>
+    {{ bootstrap.load_js() }}
+</body>
+
+</html>
